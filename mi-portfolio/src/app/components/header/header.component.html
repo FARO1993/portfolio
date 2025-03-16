@@ -1,7 +1,30 @@
-<mat-toolbar color="primary">
-    <span>Mi Portfolio</span>
-    <span class="spacer"></span>
-    <a mat-button routerLink="/" href="#about">Sobre mí</a>
-    <a mat-button routerLink="/" href="#projects">Proyectos</a>
-    <a mat-button routerLink="/" href="#contact">Contacto</a>
-</mat-toolbar>
+<header id="header">
+  <div class="background-container">
+    <!-- Botón de menú hamburguesa -->
+    <button mat-icon-button class="hamburger-button" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- Menú de navegación -->
+    <nav class="nav-container" [ngClass]="{ 'fixed-nav': isScrolled }" [class.active]="isMenuOpen">
+      <ul>
+        <li><a routerLink="/about" (click)="closeMenu()">Sobre m&iacute;</a></li>
+        <li><a routerLink="/home" (click)="closeMenu()">Inicio</a></li>
+        <li><a routerLink="/features" (click)="closeMenu()">Skills</a></li>
+        <li><a routerLink="/features" (click)="closeMenu()">Experiencia</a></li>
+        <li><a routerLink="/contact" (click)="closeMenu()">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Foto personal -->
+    <img src="{{ backgroundImage }}" alt="Foto de Facundo Rodriguez" class="profile-image">
+    <h1>Facundo Rodriguez</h1>
+    <h2>Desarrollador de Software</h2>
+
+    <!-- Botones -->
+    <div class="button-container">
+      <a mat-raised-button color="primary" routerLink="/contact">CONTACTO</a>
+      <a mat-raised-button color="accent" href="{{ pathCv }}" download="CV_Facundo_Rodriguez.pdf">DESCARGAR CV</a>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,82 @@
+// Estilos para el contenedor de habilidades
+.skill-container{
+
+  padding: 20px;
+
+  h2 {
+    text-align: center; // Centra el título
+    font-size: 24px; // Tamaño del título
+    margin-bottom: 20px; // Espacio debajo del título
+    color: #333; // Color del texto
+  }
+
+  .skills-card {
+    max-width: 1000px; // Aumenta el ancho del mat-card
+    margin: 20px auto; // Centra el mat-card
+    padding: 20px; // Espaciado interno
+    background-color: #ffffff; // Fondo blanco
+    border-radius: 10px; // Bordes redondeados
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
+    transition: transform 0.3s ease, box-shadow 0.3s ease; // Transición suave
+  
+    // Efecto de hover
+    &:hover {
+      transform: translateY(-5px); // Eleva la tarjeta ligeramente
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Sombra más pronunciada
+    }
+  
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); // 2 columnas iguales
+      gap: 15px; // Espacio entre las filas y columnas
+    }
+  
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px; // Espacio entre el nombre y la barra de progreso
+  
+      .skill-name {
+        font-size: 16px; // Tamaño del nombre de la habilidad
+        color: #555; // Color del texto
+      }
+  
+      .skill-percentage {
+        font-size: 14px; // Tamaño del porcentaje
+        color: #777; // Color del texto
+        text-align: right; // Alinea el porcentaje a la derecha
+      }
+  
+      mat-progress-bar {
+        height: 10px; // Altura de la barra de progreso
+        border-radius: 5px; // Bordes redondeados
+      }
+    }
+  }
+}
+
+  
+  // Media Queries para responsive design
+  @media (max-width: 768px) {
+    .skills-card {
+      padding: 15px; // Reduce el padding en móviles
+  
+      h2 {
+        font-size: 20px; // Tamaño más pequeño para móviles
+      }
+
+      .skills-container {
+        grid-template-columns: 1fr; // 1 sola columna en móviles
+      }
+  
+      .skill-item {
+        .skill-name {
+          font-size: 14px; // Tamaño más pequeño para móviles
+        }
+  
+        .skill-percentage {
+          font-size: 12px; // Tamaño más pequeño para móviles
+        }
+      }
+    }
+  }

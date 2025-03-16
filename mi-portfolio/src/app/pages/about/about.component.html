@@ -1,8 +1,17 @@
-<mat-card>
-    <mat-card-title>Sobre mí</mat-card-title>
-    <mat-card-content>
-      <p>¡Hola! Soy Facu Rodríguez, un desarrollador con experiencia en Angular y Spring Boot.</p>
-      <p>He trabajado en varios proyectos profesionales, pero ahora quiero mostrar mi trabajo en un portfolio personal.</p>
-    </mat-card-content>
-</mat-card>
+<mat-card class="mat-elevation-z8">
+  <mat-card-content class="about-container">
+      <div class="about-section">
+        <h2>Sobre mí</h2>
+        <p>{{about}}</p>
+      </div>
   
+      <div class="about-section">
+        <h2>Datos Personales</h2>
+        <p><strong>EDAD: </strong>{{edad}}</p>
+        <p><strong>EMAIL: </strong>{{email}}</p>
+        <p><strong>TELÉFONO: </strong>{{telefono}}</p>
+        <p><strong>CIUDAD: </strong>{{ubicacion}}</p>
+        <p><strong>IDIOMAS: </strong>{{idiomas}}</p>
+      </div>
+  </mat-card-content>
+</mat-card>
