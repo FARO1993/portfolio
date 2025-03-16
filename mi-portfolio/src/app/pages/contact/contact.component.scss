@@ -1,12 +1,38 @@
-mat-card {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
+.contact-card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: transparent; // Sin color de fondo
+  border: none; // Sin bordes
+  border-radius: 8px; // Bordes redondeados
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra base
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Sombra más pronunciada al hacer hover
+    transform: translateY(-5px); // Eleva la card ligeramente
   }
-  
+
+  .card-title {
+    text-align: center; // Centra el título
+    font-size: 24px; // Tamaño del título
+    margin-bottom: 20px; // Espacio debajo del título
+    color: #333; // Color del texto
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; // Espacio entre los campos
+  }
+
   mat-form-field {
     display: block;
     width: 100%;
     margin-bottom: 15px;
+  }
+
+  button {
+    align-self: flex-end; // Alinea el botón a la derecha
+    margin-top: 10px; // Espacio arriba del botón
+  }
 }
-  
