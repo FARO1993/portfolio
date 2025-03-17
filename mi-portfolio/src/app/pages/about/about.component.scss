@@ -1,46 +1,71 @@
 mat-card {
-  max-width: 1000px; // Aumenta el ancho del mat-card
-  margin: 20px auto;
-  padding: 30px; // Aumenta el padding interno
-  text-align: left;
-  width: 90%;
-  background-color: #FFFFFF;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra inicial
-  border-radius: 10px; // Bordes redondeados
-  transition: transform 0.3s ease, box-shadow 0.3s ease; // Transición suave
-
-  &:hover {
-      transform: scale(1.02); // Aumenta ligeramente el tamaño
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Sombra más pronunciada
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    text-align: left;
+    width: 90%;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
   }
-}
-
-.about-container {
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: space-between; // Separa las columnas
-  gap: 40px; // Aumenta el espacio entre columnas
-
-  .about-section {
-      flex: 1; // Asegura que ambas secciones ocupen el mismo espacio
-      padding: 10px; // Espaciado interno para cada sección
-
-      h4 {
-          margin-bottom: 15px; // Aumenta el espacio debajo del título
-          font-weight: 700;
-          font-size: 24px;
-          color: #333; // Color del título (opcional)
-      }
-
-      p {
-          margin-bottom: 10px; // Espaciado entre párrafos
-          font-size: 16px; // Tamaño de fuente del texto
-          color: #555; // Color del texto (opcional)
-          line-height: 1.6; // Altura de línea para mejor legibilidad
-      }
-
-      strong {
-          color: #000; // Color para el texto en negrita
-      }
+  
+  .about-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    gap: 40px;
+  
+    .about-section {
+        flex: 1;
+        padding: 10px;
+  
+        h4 {
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 24px;
+            color: #333;
+        }
+  
+        p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+  
+        strong {
+            color: #000;
+        }
+    }
   }
-}
+  
+  // Estilos responsivos
+  @media (max-width: 768px) {
+    .about-container {
+        flex-direction: column !important; // Cambia a una sola columna en pantallas pequeñas
+        gap: 20px; // Reduce el espacio entre secciones
+    }
+  
+    mat-card {
+        padding: 20px; // Reduce el padding para mejor adaptación
+    }
+  
+    .about-section {
+        text-align: center; // Centra el texto en dispositivos pequeños
+  
+        h4 {
+            font-size: 20px; // Reduce el tamaño del título
+        }
+  
+        p {
+            font-size: 14px; // Reduce el tamaño del texto para mejor lectura
+        }
+    }
+  }
+  

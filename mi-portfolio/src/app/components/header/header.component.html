@@ -5,26 +5,33 @@
       <mat-icon>menu</mat-icon>
     </button>
 
-    <!-- Menú de navegación -->
-    <nav class="nav-container" [ngClass]="{ 'fixed-nav': isScrolled }" [class.active]="isMenuOpen">
+    <!-- Menú de navegación (corregido) -->
+<nav class="nav-container" [ngClass]="{ 'fixed-nav': isScrolled }" [class.active]="isMenuOpen">
+      <!-- Botón de cierre (X) -->
+      <button mat-icon-button class="close-button" (click)="closeMenu()">
+        <mat-icon>close</mat-icon>
+      </button>
+
       <ul>
         <li><a routerLink="/about" (click)="closeMenu()">Sobre m&iacute;</a></li>
         <li><a routerLink="/home" (click)="closeMenu()">Inicio</a></li>
-        <li><a routerLink="/features" (click)="closeMenu()">Skills</a></li>
-        <li><a routerLink="/features" (click)="closeMenu()">Experiencia</a></li>
+        <li><a routerLink="/skills" (click)="closeMenu()">Skills</a></li>
+        <li><a routerLink="/experiencia" (click)="closeMenu()">Experiencia</a></li>
         <li><a routerLink="/contact" (click)="closeMenu()">Contacto</a></li>
       </ul>
     </nav>
 
-    <!-- Foto personal -->
-    <img src="{{ backgroundImage }}" alt="Foto de Facundo Rodriguez" class="profile-image">
-    <h1>Facundo Rodriguez</h1>
-    <h2>Desarrollador de Software</h2>
+    <!-- Contenido del header (imagen, títulos, botones) -->
+    <div class="header-content">
+      <img src="{{ backgroundImage }}" alt="Foto de Facundo Rodriguez" class="profile-image">
+      <h1>Facundo Rodriguez</h1>
+      <h2>Desarrollador de Software</h2>
 
-    <!-- Botones -->
-    <div class="button-container">
-      <a mat-raised-button color="primary" routerLink="/contact">CONTACTO</a>
-      <a mat-raised-button color="accent" href="{{ pathCv }}" download="CV_Facundo_Rodriguez.pdf">DESCARGAR CV</a>
+      <!-- Botones -->
+      <div class="button-container">
+        <a mat-raised-button color="primary" routerLink="/contact">CONTACTO</a>
+        <a mat-raised-button color="accent" href="{{ pathCv }}" download="CV_Facundo_Rodriguez.pdf">DESCARGAR CV</a>
+      </div>
     </div>
   </div>
 </header>
