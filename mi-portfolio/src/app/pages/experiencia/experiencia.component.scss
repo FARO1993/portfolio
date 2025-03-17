@@ -1,98 +1,121 @@
 .experience-container {
-  padding: 20px; // Espaciado interno
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px; // Espacio entre las cards
+  gap: 20px;
 
   h2 {
-    text-align: center; // Centra el título
-    font-size: 24px; // Tamaño del título
-    margin-bottom: 20px; // Espacio debajo del título
-    color: #333; // Color del texto
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
   }
 
   .experience-card {
     max-width: 1000px;
     margin: 20px auto;
     width: 90%;
-    opacity: 0; // Inicialmente invisible
-    transform: translateY(20px); // Desplazamiento inicial
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease; // Transición suave
-    background-color: transparent; // Sin color de fondo
-    border: none; // Sin bordes
-    border-radius: 8px; // Bordes redondeados
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
 
     &.visible {
-      opacity: 1; // Visible
-      transform: translateY(0); // Sin desplazamiento
+      opacity: 1;
+      transform: translateY(0);
     }
 
     &:hover {
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Sombra más pronunciada al hacer hover
-      transform: translateY(-5px); // Eleva la card ligeramente
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
     }
 
     .card-content {
-      display: flex; // Usar flexbox para dividir en dos columnas
-      gap: 20px; // Espacio entre las columnas
+      display: flex;
+      flex-wrap: wrap; // Permite que las columnas se acomoden en pantallas pequeñas
+      gap: 20px;
     }
 
     .left-column {
-      flex: 1; // Ocupa 1 parte del espacio
-      text-align: center; // Alinea el texto a la derecha
-      border-right: 2px solid rgb(194, 24, 91); // Línea divisoria
-      padding-right: 20px; // Espacio a la derecha
+      flex: 1;
+      text-align: center;
+      border-right: 2px solid rgb(194, 24, 91);
+      padding-right: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: center; // Centra verticalmente el contenido
+      justify-content: center;
     }
 
     .duration {
-      font-size: 14px; // Tamaño de la duración
-      color: #777; // Color gris
-      margin: 0; // Elimina el margen por defecto
-      line-height: 1.5; // Espaciado entre líneas
-      text-align: center; // Alinea el texto a la derecha
+      font-size: 14px;
+      color: #777;
+      margin: 0;
+      line-height: 1.5;
+      text-align: center;
     }
     
     .month {
-      text-transform: uppercase; // Convierte el texto a mayúsculas
+      text-transform: uppercase;
     }
     
     .year {
-      font-weight: normal; // Año en texto normal
+      font-weight: normal;
     }
     
     .separator {
-      margin: 0 5px; // Espacio alrededor del separador
+      margin: 0 5px;
     }
 
     .right-column {
-      flex: 3; // Ocupa 3 partes del espacio
-      padding-left: 20px; // Espacio a la izquierda
+      flex: 3;
+      padding-left: 20px;
     }
 
     h3 {
-      font-size: 20px; // Tamaño del título de la experiencia
-      color: rgb(194, 24, 91); // Color azul
-      margin-bottom: 10px; // Espacio debajo del título
+      font-size: 20px;
+      color: rgb(194, 24, 91);
+      margin-bottom: 10px;
     }
 
     .company {
-      font-size: 16px; // Tamaño del nombre de la empresa
-      color: #555; // Color gris oscuro
-      margin-bottom: 5px; // Espacio debajo del nombre de la empresa
-    }
-
-    .duration {
-      font-size: 14px; // Tamaño de la duración
-      color: #777; // Color gris
-      margin-bottom: 10px; // Espacio debajo de la duración
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 5px;
     }
 
     .description {
-      font-size: 14px; // Tamaño de la descripción
-      color: #555; // Color gris oscuro
+      font-size: 14px;
+      color: #555;
+    }
+  }
+}
+
+// Media Queries para dispositivos pequeños
+@media (max-width: 768px) {
+  .experience-card {
+    .card-content {
+      flex-direction: column; // Cambia a columna en pantallas pequeñas
+      text-align: center;
+    }
+
+    .left-column {
+      border-right: none; // Elimina la línea divisoria en móviles
+      padding-right: 0;
+    }
+
+    .right-column {
+      padding-left: 0;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    .company,
+    .description {
+      font-size: 14px;
     }
   }
 }

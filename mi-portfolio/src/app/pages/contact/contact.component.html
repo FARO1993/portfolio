@@ -1,22 +1,43 @@
 <mat-card class="contact-card mat-elevation-z4">
   <mat-card-title class="card-title">Contacto</mat-card-title>
   <mat-card-content class="card-content">
-    <mat-form-field appearance="outline">
-      <mat-label>Nombre</mat-label>
-      <input matInput placeholder="Tu nombre">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Asunto</mat-label>
-      <input matInput placeholder="El asunto de tu mensaje">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput type="email" placeholder="tuemail@example.com">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Mensaje</mat-label>
-      <textarea matInput rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
-    </mat-form-field>
-    <button mat-raised-button color="primary">Enviar</button>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" placeholder="Tu nombre">
+        <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+          El nombre es obligatorio.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Asunto</mat-label>
+        <input matInput formControlName="subject" placeholder="El asunto de tu mensaje">
+        <mat-error *ngIf="contactForm.get('subject')?.hasError('required')">
+          El asunto es obligatorio.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="tuemail@example.com">
+        <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+          El email es obligatorio.
+        </mat-error>
+        <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+          Ingresa un email válido.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Mensaje</mat-label>
+        <textarea matInput formControlName="message" rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
+        <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+          El mensaje es obligatorio.
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">Enviar</button>
+    </form>
   </mat-card-content>
 </mat-card>

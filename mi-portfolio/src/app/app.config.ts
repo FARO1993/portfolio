@@ -9,12 +9,12 @@ import { SkillsComponent } from './pages/skills/skills.component';
 import { ExperienciaComponent } from './pages/experiencia/experiencia.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'skills', component: SkillsComponent },
   { path: 'experiencia', component: ExperienciaComponent },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: 'home' }
 ];
 
 export const appConfig: ApplicationConfig = {
